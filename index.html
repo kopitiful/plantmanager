@@ -29,7 +29,7 @@
       background: none;
       border: 1.5px solid #D4CCC3;
       border-radius: 8px;
-      padding: 5px 12px;
+      padding: 5px 14px;
       font-size: 13px;
       font-weight: 600;
       color: #7B5C3F;
@@ -54,24 +54,15 @@
       text-align: center;
     }
 
-    .leaf {
-      font-size: 56px;
-      line-height: 1;
-      margin-bottom: 16px;
-    }
+    .leaf { font-size: 56px; line-height: 1; margin-bottom: 16px; }
 
-    h1 {
-      font-size: 26px;
-      font-weight: 700;
-      color: #3B6349;
-      margin-bottom: 8px;
-    }
+    h1 { font-size: 26px; font-weight: 700; color: #3B6349; margin-bottom: 8px; }
 
     .tagline {
       font-size: 15px;
       color: #7B5C3F;
       margin-bottom: 32px;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .features {
@@ -92,11 +83,7 @@
       line-height: 1.4;
     }
 
-    .features li span.icon {
-      font-size: 18px;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
+    .features li .icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
 
     .btn-download {
       display: block;
@@ -114,17 +101,9 @@
     .btn-download:hover { background: #2e4e39; transform: translateY(-1px); }
     .btn-download:active { transform: translateY(0); }
 
-    .version {
-      font-size: 12px;
-      color: #a09080;
-      margin-bottom: 28px;
-    }
+    .version { font-size: 12px; color: #a09080; margin-bottom: 28px; }
 
-    hr {
-      border: none;
-      border-top: 1px solid #EDE8E0;
-      margin: 24px 0;
-    }
+    hr { border: none; border-top: 1px solid #EDE8E0; margin: 24px 0; }
 
     .install-steps { text-align: left; }
 
@@ -144,23 +123,20 @@
       gap: 8px;
     }
 
-    .install-steps li {
-      font-size: 13px;
-      color: #5a4f45;
-      line-height: 1.4;
-    }
+    .install-steps li { font-size: 13px; color: #5a4f45; line-height: 1.4; }
 
-    .source-link {
-      margin-top: 28px;
-      font-size: 12px;
-      color: #a09080;
-    }
-
+    .source-link { margin-top: 28px; font-size: 12px; color: #a09080; }
     .source-link a { color: #3B6349; text-decoration: none; }
     .source-link a:hover { text-decoration: underline; }
+
+    /* Language visibility */
+    [data-lang] { display: none; }
+    body[data-active="de"] [data-lang="de"],
+    body[data-active="nl"] [data-lang="nl"],
+    body[data-active="en"] [data-lang="en"] { display: contents; }
   </style>
 </head>
-<body>
+<body data-active="en">
 
   <div class="lang-switcher">
     <button onclick="setLang('de')" id="btn-de">DE</button>
@@ -171,20 +147,70 @@
   <div class="card">
     <div class="leaf">🌿</div>
     <h1>Plantmanager</h1>
-    <p class="tagline" id="tagline"></p>
 
-    <ul class="features" id="features"></ul>
+    <!-- Tagline -->
+    <p class="tagline" data-lang="de">Deine Pflanzen immer im Blick —<br>wann gießen, wo hinstellen, wie pflegen.</p>
+    <p class="tagline" data-lang="nl">Al je planten altijd in beeld —<br>wanneer water geven, waar neerzetten, hoe verzorgen.</p>
+    <p class="tagline" data-lang="en">Always on top of your plants —<br>when to water, where to place, how to care.</p>
 
+    <!-- Features -->
+    <ul class="features" data-lang="de">
+      <li><span class="icon">💧</span><span>Gieß-Erinnerungen basierend auf Wetter, Jahreszeit und Standort</span></li>
+      <li><span class="icon">☀️</span><span>Lichtoptimierung — welche Pflanze in welches Zimmer</span></li>
+      <li><span class="icon">📷</span><span>Foto pro Pflanze direkt aus der Kamera</span></li>
+      <li><span class="icon">🔄</span><span>Heimnetz-Sync mit dem Desktop-Browser</span></li>
+      <li><span class="icon">🌍</span><span>Echtwetter via Open-Meteo</span></li>
+    </ul>
+    <ul class="features" data-lang="nl">
+      <li><span class="icon">💧</span><span>Gietherinnering op basis van weer, seizoen en locatie</span></li>
+      <li><span class="icon">☀️</span><span>Lichtoptimalisatie — welke plant in welke kamer</span></li>
+      <li><span class="icon">📷</span><span>Foto per plant, direct vanuit de camera</span></li>
+      <li><span class="icon">🔄</span><span>Thuisnetwerk-sync met de desktop-browser</span></li>
+      <li><span class="icon">🌍</span><span>Echt weer via Open-Meteo</span></li>
+    </ul>
+    <ul class="features" data-lang="en">
+      <li><span class="icon">💧</span><span>Watering reminders based on weather, season and location</span></li>
+      <li><span class="icon">☀️</span><span>Light optimisation — which plant goes in which room</span></li>
+      <li><span class="icon">📷</span><span>Photo per plant, taken directly from the camera</span></li>
+      <li><span class="icon">🔄</span><span>Home network sync with the desktop browser</span></li>
+      <li><span class="icon">🌍</span><span>Real weather via Open-Meteo</span></li>
+    </ul>
+
+    <!-- Download button -->
     <a class="btn-download"
-       href="https://github.com/kopitiful/plantmanager/releases/latest/download/pflanzen-android.apk"
-       id="btn-download" download></a>
-    <p class="version" id="version"></p>
+       href="https://github.com/kopitiful/plantmanager/releases/latest/download/pflanzen-android.apk">
+      <span data-lang="de">APK herunterladen</span>
+      <span data-lang="nl">APK downloaden</span>
+      <span data-lang="en">Download APK</span>
+    </a>
+    <p class="version">Android 8.0+ &middot; ~10 MB</p>
 
     <hr>
 
+    <!-- Install steps -->
     <div class="install-steps">
-      <h3 id="install-title"></h3>
-      <ol id="install-steps"></ol>
+      <h3 data-lang="de">Installation</h3>
+      <h3 data-lang="nl">Installatie</h3>
+      <h3 data-lang="en">Installation</h3>
+
+      <ol data-lang="de">
+        <li>APK herunterladen (Button oben)</li>
+        <li>In <strong>Einstellungen &rarr; Sicherheit</strong> &bdquo;Unbekannte Quellen&ldquo; erlauben</li>
+        <li>Die APK-Datei antippen und installieren</li>
+        <li>App öffnen &mdash; Pflanzen werden direkt vorgeladen</li>
+      </ol>
+      <ol data-lang="nl">
+        <li>APK downloaden (knop hierboven)</li>
+        <li>Ga naar <strong>Instellingen &rarr; Beveiliging</strong> en schakel &lsquo;Onbekende bronnen&rsquo; in</li>
+        <li>Tik op het APK-bestand en installeer</li>
+        <li>Open de app &mdash; planten worden direct ingeladen</li>
+      </ol>
+      <ol data-lang="en">
+        <li>Download the APK (button above)</li>
+        <li>Go to <strong>Settings &rarr; Security</strong> and enable &lsquo;Unknown sources&rsquo;</li>
+        <li>Tap the APK file and install</li>
+        <li>Open the app &mdash; plants are loaded right away</li>
+      </ol>
     </div>
 
     <p class="source-link">
@@ -193,87 +219,16 @@
   </div>
 
   <script>
-    const translations = {
-      de: {
-        tagline: "Deine Pflanzen immer im Blick —\nwann gießen, wo hinstellen, wie pflegen.",
-        features: [
-          ["💧", "Gieß-Erinnerungen basierend auf Wetter, Jahreszeit und Standort"],
-          ["☀️", "Lichtoptimierung — welche Pflanze in welches Zimmer"],
-          ["📷", "Foto pro Pflanze direkt aus der Kamera"],
-          ["🔄", "Heimnetz-Sync mit dem Desktop-Browser"],
-          ["🌍", "Echtwetter via Open-Meteo"],
-        ],
-        download: "APK herunterladen",
-        version: "Android 8.0+ · ~10 MB · Debug-Build",
-        installTitle: "Installation",
-        installSteps: [
-          "APK herunterladen (Button oben)",
-          "In <strong>Einstellungen → Sicherheit</strong> „Unbekannte Quellen" erlauben",
-          "Die heruntergeladene APK-Datei antippen und installieren",
-          "App öffnen — Pflanzen werden direkt vorgeladen",
-        ],
-      },
-      nl: {
-        tagline: "Al je planten altijd in beeld —\nwanneer water geven, waar neerzetten, hoe verzorgen.",
-        features: [
-          ["💧", "Gietherinnering op basis van weer, seizoen en locatie"],
-          ["☀️", "Lichtoptimalisatie — welke plant in welke kamer"],
-          ["📷", "Foto per plant, direct vanuit de camera"],
-          ["🔄", "Thuisnetwerk-sync met de desktop-browser"],
-          ["🌍", "Echt weer via Open-Meteo"],
-        ],
-        download: "APK downloaden",
-        version: "Android 8.0+ · ~10 MB · Debug-build",
-        installTitle: "Installatie",
-        installSteps: [
-          "APK downloaden (knop hierboven)",
-          "Ga naar <strong>Instellingen → Beveiliging</strong> en schakel 'Onbekende bronnen' in",
-          "Tik op het gedownloade APK-bestand en installeer",
-          "Open de app — planten worden direct ingeladen",
-        ],
-      },
-      en: {
-        tagline: "Always on top of your plants —\nwhen to water, where to place, how to care.",
-        features: [
-          ["💧", "Watering reminders based on weather, season and location"],
-          ["☀️", "Light optimisation — which plant goes in which room"],
-          ["📷", "Photo per plant, taken directly from the camera"],
-          ["🔄", "Home network sync with the desktop browser"],
-          ["🌍", "Real weather via Open-Meteo"],
-        ],
-        download: "Download APK",
-        version: "Android 8.0+ · ~10 MB · Debug build",
-        installTitle: "Installation",
-        installSteps: [
-          "Download the APK (button above)",
-          "Go to <strong>Settings → Security</strong> and enable 'Unknown sources'",
-          "Tap the downloaded APK file and install",
-          "Open the app — plants are loaded right away",
-        ],
-      },
-    };
-
     function setLang(lang) {
-      const t = translations[lang];
-      document.documentElement.lang = lang;
-      document.getElementById("tagline").innerHTML = t.tagline.replace("\n", "<br>");
-      document.getElementById("features").innerHTML = t.features
-        .map(([icon, text]) => `<li><span class="icon">${icon}</span><span>${text}</span></li>`)
-        .join("");
-      document.getElementById("btn-download").textContent = t.download;
-      document.getElementById("version").textContent = t.version;
-      document.getElementById("install-title").textContent = t.installTitle;
-      document.getElementById("install-steps").innerHTML = t.installSteps
-        .map(s => `<li>${s}</li>`).join("");
-      document.querySelectorAll(".lang-switcher button").forEach(b => b.classList.remove("active"));
-      document.getElementById("btn-" + lang).classList.add("active");
-      localStorage.setItem("lang", lang);
+      document.body.dataset.active = lang;
+      document.querySelectorAll('.lang-switcher button').forEach(b => b.classList.remove('active'));
+      document.getElementById('btn-' + lang).classList.add('active');
+      try { localStorage.setItem('lang', lang); } catch(e) {}
     }
-
-    // Auto-detect language on first visit
-    const saved = localStorage.getItem("lang");
-    const browser = navigator.language?.slice(0, 2);
-    const initial = saved || (["de","nl","en"].includes(browser) ? browser : "en");
+    var saved = '';
+    try { saved = localStorage.getItem('lang') || ''; } catch(e) {}
+    var browser = (navigator.language || '').slice(0, 2);
+    var initial = saved || (['de','nl','en'].indexOf(browser) > -1 ? browser : 'en');
     setLang(initial);
   </script>
 </body>
