@@ -1,0 +1,16 @@
+## Flask
+pflanzenmanager/data.json
+pflanzenmanager/static/uploads/
+pflanzenmanager/__pycache__/
+pflanzenmanager/*.pyc
+pflanzenmanager/weather_cache.json
+
+## Android
+pflanzen-android/local.properties
+pflanzen-android/.gradle/
+pflanzen-android/build/
+pflanzen-android/app/build/
+pflanzen-android/*.apk
+
+## macOS
+.DS_Store

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pflanzenmanager – Android App</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #FAF6F0;
+      color: #3a3028;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 4px 32px rgba(59,99,73,0.10);
+      max-width: 420px;
+      width: 100%;
+      padding: 40px 36px;
+      text-align: center;
+    }
+
+    .leaf {
+      font-size: 56px;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #3B6349;
+      margin-bottom: 8px;
+    }
+
+    .tagline {
+      font-size: 15px;
+      color: #7B5C3F;
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    .features {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: #4a3f35;
+      line-height: 1.4;
+    }
+
+    .features li span.icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .btn-download {
+      display: block;
+      background: #3B6349;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 14px;
+      transition: background 0.2s, transform 0.1s;
+      margin-bottom: 12px;
+    }
+
+    .btn-download:hover {
+      background: #2e4e39;
+      transform: translateY(-1px);
+    }
+
+    .btn-download:active {
+      transform: translateY(0);
+    }
+
+    .version {
+      font-size: 12px;
+      color: #a09080;
+      margin-bottom: 28px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #EDE8E0;
+      margin: 24px 0;
+    }
+
+    .install-steps {
+      text-align: left;
+    }
+
+    .install-steps h3 {
+      font-size: 13px;
+      font-weight: 600;
+      color: #7B5C3F;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    .install-steps ol {
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .install-steps li {
+      font-size: 13px;
+      color: #5a4f45;
+      line-height: 1.4;
+    }
+
+    .source-link {
+      margin-top: 28px;
+      font-size: 12px;
+      color: #a09080;
+    }
+
+    .source-link a {
+      color: #3B6349;
+      text-decoration: none;
+    }
+
+    .source-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="leaf">🌿</div>
+    <h1>Pflanzenmanager</h1>
+    <p class="tagline">Deine Pflanzen immer im Blick —<br>wann gießen, wo hinstellen, wie pflegen.</p>
+
+    <ul class="features">
+      <li><span class="icon">💧</span><span>Gieß-Erinnerungen basierend auf Wetter, Jahreszeit und Standort</span></li>
+      <li><span class="icon">☀️</span><span>Lichtoptimierung — welche Pflanze in welches Zimmer</span></li>
+      <li><span class="icon">📷</span><span>Foto pro Pflanze direkt aus der Kamera</span></li>
+      <li><span class="icon">🔄</span><span>Heimnetz-Sync mit dem Desktop-Browser</span></li>
+      <li><span class="icon">🌍</span><span>Echtwetter via Open-Meteo</span></li>
+    </ul>
+
+    <a class="btn-download"
+       href="https://github.com/kopitiful/plantmanager/releases/latest/download/pflanzen-android.apk"
+       download>
+      APK herunterladen
+    </a>
+    <p class="version">Android 8.0+ · ~10 MB · Debug-Build</p>
+
+    <hr>
+
+    <div class="install-steps">
+      <h3>Installation</h3>
+      <ol>
+        <li>APK herunterladen (Button oben)</li>
+        <li>In <strong>Einstellungen → Sicherheit</strong> „Unbekannte Quellen" erlauben</li>
+        <li>Die heruntergeladene APK-Datei antippen und installieren</li>
+        <li>App öffnen — Pflanzen werden direkt vorgeladen</li>
+      </ol>
+    </div>
+
+    <p class="source-link">
+      Open Source · <a href="https://github.com/kopitiful/plantmanager" target="_blank">GitHub</a>
+    </p>
+  </div>
+</body>
+</html>
